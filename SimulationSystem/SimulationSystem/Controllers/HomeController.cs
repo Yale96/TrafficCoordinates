@@ -17,7 +17,7 @@ namespace SimulationSystem.Controllers
             GoogleMapsRepository mapRepo = new GoogleMapsRepository();
             
             List<Address> a = excelRepository.readExcel();
-            
+            mapRepo.getRandomStartAndEnd();
             string data = mapRepo.getRawData(a[0], a[1]);
             mapRepo.convertJsonToMarkers(data);
             return View();

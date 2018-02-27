@@ -45,5 +45,46 @@ namespace SimulationSystem.Repositories
             return null;
         }
 
+        public Address getRandomStart()
+        {
+            ExcelRepository exRepo = new ExcelRepository();
+            List<Address> allAddresses = exRepo.readExcel();
+            Random start = new Random();
+            int first = start.Next(allAddresses.Count);
+            Address[] aOne = exRepo.readExcel().ToArray();
+            Address firstAddress = aOne[first];
+            return firstAddress;
+        }
+
+        public Address getRandomEnd()
+        {
+            ExcelRepository exRepo = new ExcelRepository();
+            List<Address> allAddresses = exRepo.readExcel();
+            Random start = new Random();
+            int first = start.Next(allAddresses.Count);
+            Address[] aOne = exRepo.readExcel().ToArray();
+            Address firstAddress = aOne[first];
+            return firstAddress;
+        }
+
+        public List<Address> getRandomStartAndEnd()
+        {
+            List<Address> returnList = new List<Address>();
+            Address start = getRandomStart();
+            Address end = getRandomEnd();
+            while(start == end)
+            {
+                start = getRandomStart();
+                end = getRandomEnd();
+
+                if(start.getZipcode() != end.getZipcode())
+                {
+                    break;
+                }
+            }
+            returnList.Add(start);
+            returnList.Add(end);
+            return returnList;
+        }
     }
 }
