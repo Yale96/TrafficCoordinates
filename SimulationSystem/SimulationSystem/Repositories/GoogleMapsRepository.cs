@@ -13,9 +13,11 @@ namespace SimulationSystem.Repositories
     public class GoogleMapsRepository
     {
         private WebClient Client;
+        ExcelRepository exRepo;
         public GoogleMapsRepository()
         {
             Client = new WebClient();
+            exRepo = new ExcelRepository();
         }
 
         public string getRawData(Address start, Address end)
@@ -80,46 +82,23 @@ namespace SimulationSystem.Repositories
             return markers;
         }
 
-        public Address getRandomStart()
-        {
-            ExcelRepository exRepo = new ExcelRepository();
-            List<Address> allAddresses = exRepo.readExcel();
-            Random start = new Random();
-            int first = start.Next(allAddresses.Count);
-            Address[] a = exRepo.readExcel().ToArray();
-            Address firstAddress = a[first];
-            return firstAddress;
-        }
-
-        public Address getRandomEnd()
-        {
-            ExcelRepository exRepo = new ExcelRepository();
-            List<Address> allAddresses = exRepo.readExcel();
-            Random start = new Random();
-            int first = start.Next(allAddresses.Count);
-            Address[] a = exRepo.readExcel().ToArray();
-            Address firstAddress = a[first];
-            return firstAddress;
-        }
-
         public List<Address> getRandomStartAndEnd()
         {
-            List<Address> returnList = new List<Address>();
-            Address start = getRandomStart();
-            Address end = getRandomEnd();
-            while(start == end)
+            exRepo = new ExcelRepository();
+            List<Address> allAddresses = exRepo.readExcel();
+            List<Address> returnAddresses = new List<Address>();
+            Random start = new Random();
+            int a = 0;
+            int b = 0;
+            while(a == b)
             {
-                start = getRandomStart();
-                end = getRandomEnd();
-
-                if(start.getZipcode() != end.getZipcode())
-                {
-                    break;
-                }
+                a = start.Next(allAddresses.Count);
+                b = start.Next(allAddresses.Count);
             }
-            returnList.Add(start);
-            returnList.Add(end);
-            return returnList;
+            returnAddresses.Add(allAddresses[a]);
+            returnAddresses.Add(allAddresses[b]);
+
+            return returnAddresses;
         }
 
         public double calculateDistance(Marker mOne, Marker mTwo)
