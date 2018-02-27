@@ -51,8 +51,8 @@ namespace SimulationSystem.Repositories
             List<Address> allAddresses = exRepo.readExcel();
             Random start = new Random();
             int first = start.Next(allAddresses.Count);
-            Address[] aOne = exRepo.readExcel().ToArray();
-            Address firstAddress = aOne[first];
+            Address[] a = exRepo.readExcel().ToArray();
+            Address firstAddress = a[first];
             return firstAddress;
         }
 
@@ -62,8 +62,8 @@ namespace SimulationSystem.Repositories
             List<Address> allAddresses = exRepo.readExcel();
             Random start = new Random();
             int first = start.Next(allAddresses.Count);
-            Address[] aOne = exRepo.readExcel().ToArray();
-            Address firstAddress = aOne[first];
+            Address[] a = exRepo.readExcel().ToArray();
+            Address firstAddress = a[first];
             return firstAddress;
         }
 

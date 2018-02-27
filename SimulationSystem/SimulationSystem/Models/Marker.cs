@@ -11,10 +11,10 @@ namespace SimulationSystem.Models
         private double Lat;
         private double Lon;
 
-        public Marker(long followUpId, double lan, double lon)
+        public Marker(long followUpId, double lat, double lon)
         {
             this.FollowUpId = followUpId;
-            this.Lat = lan;
+            this.Lat = lat;
             this.Lon = lon;
         }
 
