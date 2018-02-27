@@ -86,5 +86,13 @@ namespace SimulationSystem.Repositories
             returnList.Add(end);
             return returnList;
         }
+
+        public double calculateDistance(Marker mOne, Marker mTwo)
+        {
+            var a = mTwo.getLat() - mOne.getLat();
+            var b = mTwo.getLon() - mOne.getLon();
+
+            return Math.Sqrt(a * a + b * b);
+        }
     }
 }
