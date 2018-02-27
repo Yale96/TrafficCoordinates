@@ -17,9 +17,12 @@ namespace SimulationSystem.Controllers
             GoogleMapsRepository mapRepo = new GoogleMapsRepository();
             
             List<Address> a = excelRepository.readExcel();
+            
             mapRepo.getRandomStartAndEnd();
             string data = mapRepo.getRawData(a[0], a[1]);
+            List<Marker> markers = mapRepo.convertJsonToMarkers(mapRepo.getRawData(a[0], a[1]));
             mapRepo.convertJsonToMarkers(data);
+            double m = mapRepo.calculateDistance(markers[0], markers[1]);
             return View();
         }
     }
