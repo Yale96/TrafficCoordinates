@@ -5,6 +5,7 @@ using System.Web;
 
 namespace SimulationSystem.Models
 {
+    [Serializable]
     public class Marker
     {
         private long FollowUpId;
