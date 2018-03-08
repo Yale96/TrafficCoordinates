@@ -38,3 +38,43 @@ C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\SimulationSystem.Te
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.csproj.CoreCompileInputs.cache
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.dll
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.pdb
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.csproj.CoreCompileInputs.cache
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\ApplicationInsights.config
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\SimulationSystem.Tests.dll.config
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\SimulationSystem.Tests.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\SimulationSystem.Tests.pdb
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\Newtonsoft.Json.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\SimulationSystem.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Net.Http.Formatting.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Helpers.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Http.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Http.WebHost.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Mvc.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Razor.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Optimization.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\SimulationSystem.pdb
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\Newtonsoft.Json.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Net.Http.Formatting.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Helpers.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Http.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Http.WebHost.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Mvc.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Razor.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\bin\Debug\System.Web.Optimization.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.csprojResolveAssemblyReference.cache
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.pdb
