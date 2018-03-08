@@ -103,7 +103,6 @@ namespace SimulationSystem.Repositories
 
         public double calculateDistance(Marker mOne, Marker mTwo)
         {
-<<<<<<< HEAD
             double rlat1 = Math.PI * (double)mOne.getLat() / 180;
             double rlat2 = Math.PI * (double)mTwo.getLat() / 180;
             double theta = (double)mOne.getLon() - (double)mTwo.getLon();
@@ -115,12 +114,8 @@ namespace SimulationSystem.Repositories
             dist = dist * 180 / Math.PI;
             dist = dist * 60 * 1.1515;
             dist = dist * 1.609344;
-=======
-            var a = mTwo.getLat() - mOne.getLat();
-            var b = mTwo.getLon() - mOne.getLon();
->>>>>>> parent of 07e4486... rest implementation and added tracker class
 
-            return Math.Sqrt(a * a + b * b);
+            return dist;
         }
     }
 }
