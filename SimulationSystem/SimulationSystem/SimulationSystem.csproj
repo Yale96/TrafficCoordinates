@@ -228,6 +228,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\adressen_be.xls" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -251,7 +252,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Views\Api\" />
   </ItemGroup>
   <ItemGroup>
@@ -333,4 +333,6 @@
   </Target>
   <Target Name="AfterBuild">
   </Target> -->
+  <Target Name="GatherAllFilesToPublish">
+  </Target>
 </Project>
