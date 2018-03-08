@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace SimulationSystem.Controllers
 {
-    public class ValuesController : DataController
+    public class ValuesController : ApiController
     {
         // GET api/values
         public IEnumerable<string> Get()
