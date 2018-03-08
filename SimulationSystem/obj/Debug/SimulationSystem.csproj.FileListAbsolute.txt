@@ -146,7 +146,6 @@ C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\SimulationSystem\ob
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\SimulationSystem\obj\Debug\SimulationSystem.pdb
 <<<<<<< HEAD
 =======
-<<<<<<< HEAD
 >>>>>>> bbe89d2b5eb9be49ae96fc491b77e76247836a65
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\bin\ApplicationInsights.config
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\bin\SimulationSystem.dll
@@ -196,9 +195,6 @@ C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\obj\Debug\Simulatio
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.csproj.CoreCompileInputs.cache
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.dll
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.pdb
-<<<<<<< HEAD
-=======
-=======
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem\bin\ApplicationInsights.config
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem\bin\SimulationSystem.dll
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem\bin\SimulationSystem.pdb
@@ -248,4 +244,3 @@ H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem\obj\De
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem\obj\Debug\SimulationSystem.pdb
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates\SimulationSystem\obj\Debug\SimulationSystem.csprojResolveAssemblyReference.cache
 >>>>>>> 87450dac8a7bc0f63b21cdda3942307e72456c26
->>>>>>> bbe89d2b5eb9be49ae96fc491b77e76247836a65
