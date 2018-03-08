@@ -69,10 +69,10 @@ namespace SimulationSystem.Repositories
                         coordinates = JObject.Children().ElementAt(index).Children();
                     }
 
-                    double lat;
-                    double lng;
-                    Double.TryParse(coordinates.Children().ElementAt(0).Children().ElementAt(0).ToString(), out lat);
-                    Double.TryParse(coordinates.Children().ElementAt(1).Children().ElementAt(0).ToString(), out lng);
+                    decimal lat;
+                    decimal lng;
+                    Decimal.TryParse(coordinates.Children().ElementAt(0).Children().ElementAt(0).ToString(), out lat);
+                    Decimal.TryParse(coordinates.Children().ElementAt(1).Children().ElementAt(0).ToString(), out lng);
 
                     Marker m = new Marker(markerID, lat, lng);
                     markers.Add(m);
@@ -103,9 +103,9 @@ namespace SimulationSystem.Repositories
 
         public double calculateDistance(Marker mOne, Marker mTwo)
         {
-            double rlat1 = Math.PI * mOne.getLat() / 180;
-            double rlat2 = Math.PI * mTwo.getLat() / 180;
-            double theta = mOne.getLon() - mTwo.getLon();
+            double rlat1 = Math.PI * (double)mOne.getLat() / 180;
+            double rlat2 = Math.PI * (double)mTwo.getLat() / 180;
+            double theta = (double)mOne.getLon() - (double)mTwo.getLon();
             double rtheta = Math.PI * theta / 180;
             double dist =
                 Math.Sin(rlat1) * Math.Sin(rlat2) + Math.Cos(rlat1) *

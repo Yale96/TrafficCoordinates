@@ -5,14 +5,13 @@ using System.Web;
 
 namespace SimulationSystem.Models
 {
-    [Serializable]
     public class Marker
     {
         private long FollowUpId;
-        private double Lat;
-        private double Lon;
+        private decimal Lat;
+        private decimal Lon;
 
-        public Marker(long followUpId, double lat, double lon)
+        public Marker(long followUpId, decimal lat, decimal lon)
         {
             this.FollowUpId = followUpId;
             this.Lat = lat;
@@ -24,11 +23,11 @@ namespace SimulationSystem.Models
             return this.FollowUpId;
         }
 
-        public double getLat()
+        public decimal getLat()
         {
             return this.Lat;
         }
-        public double getLon()
+        public decimal getLon()
         {
             return this.Lon;
         }

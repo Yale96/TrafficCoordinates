@@ -1,18 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Xml.Serialization;
+using System.Runtime.Serialization;
 
 namespace SimulationSystem.Models
 {
+    [DataContract]
     public class Tracker
     {
-        private long trackerid { get; set; }
+        [DataMember]
+        private string trackerid { get; set; }
+        [DataMember]
         private decimal lat { get; set; }
+        [DataMember]
         private decimal lng { get; set; }
+        [DataMember]
         private DateTime timestamp { get; set; }
 
-        public Tracker(long trackerid, decimal lat, decimal lng, DateTime timestamp)
+        public Tracker(string trackerid, decimal lat, decimal lng, DateTime timestamp)
         {
             this.trackerid = trackerid;
             this.lat = lat;
