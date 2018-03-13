@@ -14,14 +14,14 @@ namespace SimulationSystem.Models
         [DataMember]
         private decimal lng { get; set; }
         [DataMember]
-        private DateTime timestamp { get; set; }
+        private long timestamp { get; set; }
 
         public Tracker(string trackerid, decimal lat, decimal lng, DateTime timestamp)
         {
             this.trackerid = trackerid;
             this.lat = lat;
             this.lng = lng;
-            this.timestamp = timestamp;
+            this.timestamp = timestamp.Ticks;
         }
     }
 }
