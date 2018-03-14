@@ -8,13 +8,13 @@ namespace SimulationSystem.Models
     public class Tracker
     {
         [DataMember]
-        private string trackerid { get; set; }
+        public string trackerid { get; set; }
         [DataMember]
-        private decimal lat { get; set; }
+        public decimal lat { get; set; }
         [DataMember]
-        private decimal lng { get; set; }
+        public decimal lng { get; set; }
         [DataMember]
-        private long timestamp { get; set; }
+        public long timestamp { get; set; }
 
         public Tracker(string trackerid, decimal lat, decimal lng, DateTime timestamp)
         {
@@ -22,6 +22,14 @@ namespace SimulationSystem.Models
             this.lat = lat;
             this.lng = lng;
             this.timestamp = timestamp.Ticks;
+        }
+
+        public Tracker(string trackerid, decimal lat, decimal lng, Int64 timestamp)
+        {
+            this.trackerid = trackerid;
+            this.lat = lat;
+            this.lng = lng;
+            this.timestamp = timestamp;
         }
     }
 }

@@ -93,3 +93,4 @@ C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\obj\Debug\Simulatio
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.csproj.CoreCompileInputs.cache
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.dll
 C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.pdb
+C:\Users\Frank\Documents\TrafficCoordinates\SimulationSystem\bin\MySql.Data.dll

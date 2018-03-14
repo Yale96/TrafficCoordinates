@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using SimulationSystem.Models;
 using SimulationSystem.Repositories;
+using SimulationSystem.DAL;
 
 namespace SimulationSystem.Controllers
 {
@@ -12,18 +13,41 @@ namespace SimulationSystem.Controllers
     {
         GoogleMapsRepository mapRepo;
         
+        [HttpPost]
+        public IEnumerable<Tracker> Post()
+        {
+            SimulationSystem.DAL.MySql sql = new DAL.MySql();
+            List<Tracker> trackers = new List<Tracker>();
+            mapRepo = new GoogleMapsRepository();
+            List<Address> startAndEnd = mapRepo.getRandomStartAndEnd();
+            List<Marker> markers = mapRepo.convertJsonToMarkers(mapRepo.getRawData(startAndEnd[0], startAndEnd[1]));
+            for(int i = 0; i < markers.Count; i++)
+            {
+                Tracker tracker = new Tracker("BE001", markers[i].getLat(), markers[i].getLon(), DateTime.Now);
+                trackers.Add(tracker);
+                sql.insertTracker(tracker);
+
+            }
+            return trackers;
+        }
+
         [HttpGet]
         public IEnumerable<Tracker> Get()
         {
+            SimulationSystem.DAL.MySql sql = new DAL.MySql();
             List<Tracker> trackers = new List<Tracker>();
-            //mapRepo = new GoogleMapsRepository();
-            //List<Address> startAndEnd = mapRepo.getRandomStartAndEnd();
-            //List<Marker> markers = mapRepo.convertJsonToMarkers(mapRepo.getRawData(startAndEnd[0], startAndEnd[1]));
-            //Tracker tracker = new Tracker("BE001", markers[0].getLat(), markers[0].getLon(), DateTime.Now);
-            Tracker tracker = new Tracker("BE001", (decimal)53.22455, (decimal)4.5635677, DateTime.Now);
-            Tracker tracker2 = new Tracker("BE002", (decimal)53.22356, (decimal)4.564444, DateTime.Now);
+            int counter = sql.getCounter();
+            Tracker tracker = sql.getTracker(counter);
             trackers.Add(tracker);
-            trackers.Add(tracker2);
+            counter++;
+            if(counter < 16)
+            {
+                sql.updateCounter(counter);
+            }
+            else
+            {
+                sql.updateCounter(1);
+            }
             return trackers;
         }
     }

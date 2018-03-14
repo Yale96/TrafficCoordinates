@@ -1,0 +1,17 @@
+﻿DROP TABLE IF EXISTS coordinates;
+DROP TABLE IF EXISTS counter;
+
+CREATE TABLE coordinates (
+	ID INT(255) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	trackerid VARCHAR(255),
+	lat DECIMAL(9,7),
+	lng DECIMAL(9,7),
+	timestamp BIGINT);
+
+CREATE TABLE counter (
+	id INT(255),
+	counter INT(255));
+
+
+INSERT INTO counter VALUES(0,1);
+UPDATE counter set counter = 1 where id = 0;
