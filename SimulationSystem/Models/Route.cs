@@ -7,7 +7,7 @@ using System.Web;
 
 namespace SimulationSystem.Models
 {
-    [Table("RouteTable")]
+    [Table("Route")]
     public class Route
     {
         [Key]

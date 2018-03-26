@@ -35,7 +35,7 @@ namespace SimulationSystem.Controllers
             }
         }
 
-        [Route("Test")]
+        [Route("test")]
         [HttpPost]
         public void Test()
         {

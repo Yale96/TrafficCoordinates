@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimulationSystem.Models
 {
-    [Table("TrackerTable")]
+    [Table("Tracker")]
     public class Tracker
     {
         [Key]

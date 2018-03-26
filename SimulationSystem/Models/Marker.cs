@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimulationSystem.Models
 {
-    [Table("MarkerTable")]
+    [Table("Marker")]
     public class Marker
     {
         [Key]

@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimulationSystem.Models
 {
-    [Table("AddressTable")]
+    [Table("Address")]
     public class Address
     {
         [Key]
