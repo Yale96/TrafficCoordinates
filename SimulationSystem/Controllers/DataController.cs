@@ -9,31 +9,33 @@ using SimulationSystem.DAL;
 
 namespace SimulationSystem.Controllers
 {
+    [RoutePrefix("api/data")]
     public class DataController : ApiController
     {
         GoogleMapsRepository mapRepo;
-        
-        //[HttpPost]
-        //public IEnumerable<Tracker> Post()
-        //{
-        //    using (var ctx = new SimulationContext())
-        //    {
-        //        List<Tracker> trackers = new List<Tracker>();
-        //        mapRepo = new GoogleMapsRepository();
-        //        List<Address> startAndEnd = mapRepo.getRandomStartAndEnd();
-        //        List<Marker> markers = mapRepo.convertJsonToMarkers(mapRepo.getRawData(startAndEnd[0], startAndEnd[1]));
-        //        for (int i = 0; i < markers.Count; i++)
-        //        {
-        //            Tracker tracker = new Tracker(markers[i].Lat, markers[i].Lon, DateTime.Now);
-        //            trackers.Add(tracker);
-        //            ctx.Trackers.Add(tracker);
-        //            ctx.SaveChanges();
+               
+        [HttpPost]
+        public IEnumerable<Tracker> Post()
+        {
+            using (var ctx = new SimulationContext())
+            {
+                List<Tracker> trackers = new List<Tracker>();
+                mapRepo = new GoogleMapsRepository();
+                List<Address> startAndEnd = mapRepo.getRandomStartAndEnd();
+                List<Marker> markers = mapRepo.convertJsonToMarkers(mapRepo.getRawData(startAndEnd[0], startAndEnd[1]));
+                for (int i = 0; i < markers.Count; i++)
+                {
+                    Tracker tracker = new Tracker(markers[i].Lat, markers[i].Lon, DateTime.Now);
+                    trackers.Add(tracker);
+                    ctx.Trackers.Add(tracker);
+                    ctx.SaveChanges();
 
-        //        }
-        //        return trackers;
-        //    }
-        //}
+                }
+                return trackers;
+            }
+        }
 
+        [Route("Test")]
         [HttpPost]
         public void Test()
         {

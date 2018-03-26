@@ -101,3 +101,4 @@ H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\obj
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\obj\Debug\SimulationSystem.csproj.CopyComplete
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\obj\Debug\SimulationSystem.dll
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\obj\Debug\SimulationSystem.pdb
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\obj\Debug\SimulationSystem.csprojResolveAssemblyReference.cache
