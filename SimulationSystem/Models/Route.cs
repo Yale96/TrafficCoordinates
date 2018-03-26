@@ -1,29 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace SimulationSystem.Models
 {
+    [Table("RouteTable")]
     public class Route
     {
-        private Address Start { get; set; }
-        private Address End { get; set; }
-        private List<Marker> Markers { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long id { get; set; }
+        public Address Start { get; set; }
+        public Address End { get; set; }
+        public virtual ICollection<Marker> Markers { get; set; }
+        public Route()
+        {
+
+        }
 
         public Route(Address start, Address end)
         {
             this.Start = start;
-            this.End = end;  
-        }
-        public List<Marker> getMarkers()
-        {
-            return this.Markers;
+            this.End = end;
         }
 
-        public void generateRoute()
-        {
-
-        }
     }
 }

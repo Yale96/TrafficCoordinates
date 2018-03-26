@@ -2,14 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimulationSystem.Models
 {
+    [Table("MarkerTable")]
     public class Marker
     {
-        private long FollowUpId;
-        private decimal Lat;
-        private decimal Lon;
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long FollowUpId { get; set; }
+        public decimal Lat { get; set; }
+        public decimal Lon { get; set; }
+
+        public Marker()
+        {
+
+        }
 
         public Marker(long followUpId, decimal lat, decimal lon)
         {
@@ -18,18 +28,6 @@ namespace SimulationSystem.Models
             this.Lon = lon;
         }
 
-        public long getFollowUpId()
-        {
-            return this.FollowUpId;
-        }
 
-        public decimal getLat()
-        {
-            return this.Lat;
-        }
-        public decimal getLon()
-        {
-            return this.Lon;
-        }
     }
 }

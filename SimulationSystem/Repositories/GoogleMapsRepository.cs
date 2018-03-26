@@ -7,17 +7,16 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Text.RegularExpressions;
+using SimulationSystem.DAL;
 
 namespace SimulationSystem.Repositories
 {
     public class GoogleMapsRepository
     {
         private WebClient Client;
-        ExcelRepository exRepo;
         public GoogleMapsRepository()
         {
             Client = new WebClient();
-            exRepo = new ExcelRepository();
         }
 
         public string getRawData(Address start, Address end)
@@ -30,7 +29,7 @@ namespace SimulationSystem.Repositories
                 string content = Client.DownloadString(url);
                 return content;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
             }
@@ -84,28 +83,32 @@ namespace SimulationSystem.Repositories
 
         public List<Address> getRandomStartAndEnd()
         {
-            exRepo = new ExcelRepository();
-            List<Address> allAddresses = exRepo.readExcel();
-            List<Address> returnAddresses = new List<Address>();
-            Random start = new Random();
-            int a = 0;
-            int b = 0;
-            while(a == b)
+            using (var ctx = new SimulationContext())
             {
-                a = start.Next(allAddresses.Count);
-                b = start.Next(allAddresses.Count);
-            }
-            returnAddresses.Add(allAddresses[a]);
-            returnAddresses.Add(allAddresses[b]);
+                List<Address> allAddresses = ctx.Addresses.ToList();
 
-            return returnAddresses;
+
+                List<Address> returnAddresses = new List<Address>();
+                Random start = new Random();
+                int a = 0;
+                int b = 0;
+                while (a == b)
+                {
+                    a = start.Next(allAddresses.Count);
+                    b = start.Next(allAddresses.Count);
+                }
+                returnAddresses.Add(allAddresses[a]);
+                returnAddresses.Add(allAddresses[b]);
+
+                return returnAddresses;
+            }
         }
 
         public double calculateDistance(Marker mOne, Marker mTwo)
         {
-            double rlat1 = Math.PI * (double)mOne.getLat() / 180;
-            double rlat2 = Math.PI * (double)mTwo.getLat() / 180;
-            double theta = (double)mOne.getLon() - (double)mTwo.getLon();
+            double rlat1 = Math.PI * (double)mOne.Lat / 180;
+            double rlat2 = Math.PI * (double)mTwo.Lat / 180;
+            double theta = (double)mOne.Lon - (double)mTwo.Lon;
             double rtheta = Math.PI * theta / 180;
             double dist =
                 Math.Sin(rlat1) * Math.Sin(rlat2) + Math.Cos(rlat1) *

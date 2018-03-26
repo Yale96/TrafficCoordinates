@@ -13,42 +13,35 @@ namespace SimulationSystem.Controllers
     {
         GoogleMapsRepository mapRepo;
         
+        //[HttpPost]
+        //public IEnumerable<Tracker> Post()
+        //{
+        //    using (var ctx = new SimulationContext())
+        //    {
+        //        List<Tracker> trackers = new List<Tracker>();
+        //        mapRepo = new GoogleMapsRepository();
+        //        List<Address> startAndEnd = mapRepo.getRandomStartAndEnd();
+        //        List<Marker> markers = mapRepo.convertJsonToMarkers(mapRepo.getRawData(startAndEnd[0], startAndEnd[1]));
+        //        for (int i = 0; i < markers.Count; i++)
+        //        {
+        //            Tracker tracker = new Tracker(markers[i].Lat, markers[i].Lon, DateTime.Now);
+        //            trackers.Add(tracker);
+        //            ctx.Trackers.Add(tracker);
+        //            ctx.SaveChanges();
+
+        //        }
+        //        return trackers;
+        //    }
+        //}
+
         [HttpPost]
-        public IEnumerable<Tracker> Post()
+        public void Test()
         {
-            SimulationSystem.DAL.MySql sql = new DAL.MySql();
-            List<Tracker> trackers = new List<Tracker>();
-            mapRepo = new GoogleMapsRepository();
-            List<Address> startAndEnd = mapRepo.getRandomStartAndEnd();
-            List<Marker> markers = mapRepo.convertJsonToMarkers(mapRepo.getRawData(startAndEnd[0], startAndEnd[1]));
-            for(int i = 0; i < markers.Count; i++)
+            using (var ctx = new SimulationContext())
             {
-                Tracker tracker = new Tracker("BE001", markers[i].getLat(), markers[i].getLon(), DateTime.Now);
-                trackers.Add(tracker);
-                sql.insertTracker(tracker);
-
+                ctx.Addresses.Add(new Address("Test", "Test", "Test", "Test"));
+                ctx.SaveChanges();
             }
-            return trackers;
-        }
-
-        [HttpGet]
-        public IEnumerable<Tracker> Get()
-        {
-            SimulationSystem.DAL.MySql sql = new DAL.MySql();
-            List<Tracker> trackers = new List<Tracker>();
-            int counter = sql.getCounter();
-            Tracker tracker = sql.getTracker(counter);
-            trackers.Add(tracker);
-            counter++;
-            if(counter < 16)
-            {
-                sql.updateCounter(counter);
-            }
-            else
-            {
-                sql.updateCounter(1);
-            }
-            return trackers;
         }
     }
 }

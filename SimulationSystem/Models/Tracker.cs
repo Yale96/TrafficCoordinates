@@ -1,32 +1,35 @@
 ﻿using System;
 using System.Xml.Serialization;
 using System.Runtime.Serialization;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimulationSystem.Models
 {
-    [DataContract]
+    [Table("TrackerTable")]
     public class Tracker
     {
-        [DataMember]
-        public string trackerid { get; set; }
-        [DataMember]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long trackerid { get; set; }
         public decimal lat { get; set; }
-        [DataMember]
         public decimal lng { get; set; }
-        [DataMember]
         public long timestamp { get; set; }
 
-        public Tracker(string trackerid, decimal lat, decimal lng, DateTime timestamp)
+        public Tracker()
         {
-            this.trackerid = trackerid;
+
+        }
+
+        public Tracker(decimal lat, decimal lng, DateTime timestamp)
+        {
             this.lat = lat;
             this.lng = lng;
             this.timestamp = timestamp.Ticks;
         }
 
-        public Tracker(string trackerid, decimal lat, decimal lng, Int64 timestamp)
+        public Tracker(decimal lat, decimal lng, Int64 timestamp)
         {
-            this.trackerid = trackerid;
             this.lat = lat;
             this.lng = lng;
             this.timestamp = timestamp;

@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimulationSystem.Models
 {
+    [Table("AddressTable")]
     public class Address
     {
-        private string Street;
-        private string Number;
-        private string Zip;
-        private string City;
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long id { get; set; }
+        public string Street { get; set; }
+        public string Number { get; set; }
+        public string Zip { get; set; }
+        public string City { get; set; }
+        public Address()
+        {
+
+        }
 
         public Address(string street, string number, string zip, string city)
         {
@@ -20,25 +30,6 @@ namespace SimulationSystem.Models
             this.City = city;
         }
 
-        public string getStreet()
-        {
-            return this.Street;
-        }
-
-        public string getNumber()
-        {
-            return this.Number;
-        }
-
-        public string getZipcode()
-        {
-            return this.Zip;
-        }
-
-        public string getCity()
-        {
-            return this.City;
-        }
         public override string ToString()
         {
             return Street + "+" + Number + "+" + Zip + "+" + City;
