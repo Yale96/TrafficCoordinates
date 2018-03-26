@@ -31,7 +31,7 @@ namespace SimulationSystem.Repositories
             }
             catch (Exception e)
             {
-
+                
             }
             return "";
         }
@@ -81,7 +81,7 @@ namespace SimulationSystem.Repositories
             return markers;
         }
 
-        public List<Address> getRandomStartAndEnd()
+        public void getRouteAddres(out Address start, out Address end)
         {
             using (var ctx = new SimulationContext())
             {
@@ -89,20 +89,41 @@ namespace SimulationSystem.Repositories
 
 
                 List<Address> returnAddresses = new List<Address>();
-                Random start = new Random();
+                Random random = new Random();
                 int a = 0;
                 int b = 0;
                 while (a == b)
                 {
-                    a = start.Next(allAddresses.Count);
-                    b = start.Next(allAddresses.Count);
+                    a = random.Next(allAddresses.Count);
+                    b = random.Next(allAddresses.Count);
                 }
-                returnAddresses.Add(allAddresses[a]);
-                returnAddresses.Add(allAddresses[b]);
-
-                return returnAddresses;
+                start = allAddresses[a];
+                end = allAddresses[b];
             }
         }
+
+        //public List<Address> getRandomStartAndEnd()
+        //{
+        //    using (var ctx = new SimulationContext())
+        //    {
+        //        List<Address> allAddresses = ctx.Addresses.ToList();
+
+
+        //        List<Address> returnAddresses = new List<Address>();
+        //        Random start = new Random();
+        //        int a = 0;
+        //        int b = 0;
+        //        while (a == b)
+        //        {
+        //            a = start.Next(allAddresses.Count);
+        //            b = start.Next(allAddresses.Count);
+        //        }
+        //        returnAddresses.Add(allAddresses[a]);
+        //        returnAddresses.Add(allAddresses[b]);
+
+        //        return returnAddresses;
+        //    }
+        //}
 
         public double calculateDistance(Marker mOne, Marker mTwo)
         {

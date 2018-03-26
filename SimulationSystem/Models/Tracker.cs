@@ -3,6 +3,7 @@ using System.Xml.Serialization;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace SimulationSystem.Models
 {
@@ -15,6 +16,7 @@ namespace SimulationSystem.Models
         public decimal lat { get; set; }
         public decimal lng { get; set; }
         public long timestamp { get; set; }
+        public virtual ICollection<Route> Routes { get; set; }
 
         public Tracker()
         {

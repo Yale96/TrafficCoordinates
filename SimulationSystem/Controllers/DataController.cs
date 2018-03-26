@@ -15,23 +15,43 @@ namespace SimulationSystem.Controllers
         GoogleMapsRepository mapRepo;
                
         [HttpPost]
-        public IEnumerable<Tracker> Post()
+        public void Post()
+        {
+            using (var ctx = new SimulationContext())
+            {
+                //Must be made random in future
+                Route routeOne = ctx.Routes.Where(r => r.id == 1).SingleOrDefault();
+                //Must be made random in future
+                Tracker trackerOne = ctx.Trackers.Where(t => t.trackerid == 1).SingleOrDefault();
+                trackerOne.Routes.Add(routeOne);
+                List<Marker> markers = (List<Marker>)routeOne.Markers;
+                for (int i = 0; i < routeOne.Markers.Count; i++)
+                {
+                   
+                    ctx.Trackers.Add(trackerOne);
+                }
+            }
+        }
+
+        [Route("generateroute")]
+        [HttpPost]
+        public void addRoute()
         {
             using (var ctx = new SimulationContext())
             {
                 List<Tracker> trackers = new List<Tracker>();
                 mapRepo = new GoogleMapsRepository();
-                List<Address> startAndEnd = mapRepo.getRandomStartAndEnd();
-                List<Marker> markers = mapRepo.convertJsonToMarkers(mapRepo.getRawData(startAndEnd[0], startAndEnd[1]));
-                for (int i = 0; i < markers.Count; i++)
-                {
-                    Tracker tracker = new Tracker(markers[i].Lat, markers[i].Lon, DateTime.Now);
-                    trackers.Add(tracker);
-                    ctx.Trackers.Add(tracker);
-                    ctx.SaveChanges();
+                //List<Address> startAndEnd = mapRepo.getRandomStartAndEnd();
+                Address start;
+                Address end;
+                mapRepo.getRouteAddres(out start, out end);
 
-                }
-                return trackers;
+
+                List<Marker> markers = mapRepo.convertJsonToMarkers(mapRepo.getRawData(start, end));
+                Route route = new Route(start, end, markers);
+                ctx.Routes.Add(route);
+                
+                ctx.SaveChanges();
             }
         }
 

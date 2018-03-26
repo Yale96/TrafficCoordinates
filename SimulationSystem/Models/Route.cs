@@ -21,10 +21,11 @@ namespace SimulationSystem.Models
 
         }
 
-        public Route(Address start, Address end)
+        public Route(Address start, Address end, ICollection<Marker> markers)
         {
             this.Start = start;
             this.End = end;
+            this.Markers = markers;
         }
 
     }
