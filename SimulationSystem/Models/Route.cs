@@ -15,7 +15,6 @@ namespace SimulationSystem.Models
         public long id { get; set; }
         public Address Start { get; set; }
         public Address End { get; set; }
-        [ForeignKey("FollowUpId")]
         public virtual ICollection<Marker> Markers { get; set; }
         public Route()
         {
