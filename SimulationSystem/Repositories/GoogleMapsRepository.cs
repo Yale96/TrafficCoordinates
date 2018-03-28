@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Text.RegularExpressions;
 using SimulationSystem.DAL;
+using SimulationSystem.ResponseModels;
 
 namespace SimulationSystem.Repositories
 {
@@ -36,10 +37,23 @@ namespace SimulationSystem.Repositories
             return "";
         }
 
+        public RoadAPIResponse roadResponse(ICollection<Marker> markers)
+        {
+            string markerString = "";
+
+            foreach (Marker m in markers)
+            {
+                    markerString += m.ToString();
+            }
+            markerString = markerString.Remove(markerString.Length - 1);
+
+            string url = "https://roads.googleapis.com/v1/nearestRoads?points="+ markerString + "&key=AIzaSyCIx_pQb19a4YJMg1mPq6xEW3Qy5MRnGEE";
+            return JsonConvert.DeserializeObject<RoadAPIResponse>(Client.DownloadString(url));
+        }
+
         public List<Marker> convertJsonToMarkers(string json)
         {
             List<Marker> markers = new List<Marker>();
-            int markerID = 0;
 
             string[] firstSplittedString = Regex.Split(json, "\"steps\" : ");
             string[] secondSplittedString = Regex.Split(firstSplittedString[1], ",\n               \"traffic");
@@ -73,57 +87,35 @@ namespace SimulationSystem.Repositories
                     Decimal.TryParse(coordinates.Children().ElementAt(0).Children().ElementAt(0).ToString(), out lat);
                     Decimal.TryParse(coordinates.Children().ElementAt(1).Children().ElementAt(0).ToString(), out lng);
 
-                    Marker m = new Marker(markerID, lat, lng);
+                    Marker m = new Marker(lat, lng);
                     markers.Add(m);
-                    markerID++;
                 }
             }
             return markers;
         }
 
-        public void getRouteAddres(out Address start, out Address end)
+        public void getRouteAddres(Tracker tracker, out Address start, out Address end)
         {
             using (var ctx = new SimulationContext())
             {
                 List<Address> allAddresses = ctx.Addresses.ToList();
-
-
-                List<Address> returnAddresses = new List<Address>();
-                Random random = new Random();
-                int a = 0;
-                int b = 0;
-                while (a == b)
+                Random rndStart = new Random();
+                Random rndEnd = new Random();
+                if (tracker.Routes.Count != 0)
                 {
-                    a = random.Next(allAddresses.Count);
-                    b = random.Next(allAddresses.Count);
+                    start = tracker.Routes.Last().End;
                 }
-                start = allAddresses[a];
-                end = allAddresses[b];
+                else
+                {
+                    start = allAddresses[rndStart.Next(allAddresses.Count)];
+                }
+                end = allAddresses[rndEnd.Next(allAddresses.Count)];
+                while (end == start)
+                {
+                    end = allAddresses[rndEnd.Next(allAddresses.Count)];
+                }
             }
         }
-
-        //public List<Address> getRandomStartAndEnd()
-        //{
-        //    using (var ctx = new SimulationContext())
-        //    {
-        //        List<Address> allAddresses = ctx.Addresses.ToList();
-
-
-        //        List<Address> returnAddresses = new List<Address>();
-        //        Random start = new Random();
-        //        int a = 0;
-        //        int b = 0;
-        //        while (a == b)
-        //        {
-        //            a = start.Next(allAddresses.Count);
-        //            b = start.Next(allAddresses.Count);
-        //        }
-        //        returnAddresses.Add(allAddresses[a]);
-        //        returnAddresses.Add(allAddresses[b]);
-
-        //        return returnAddresses;
-        //    }
-        //}
 
         public double calculateDistance(Marker mOne, Marker mTwo)
         {
@@ -140,6 +132,16 @@ namespace SimulationSystem.Repositories
             dist = dist * 1.609344;
 
             return dist;
+        }
+
+        public Route generateRoute(Tracker tracker)
+        {
+            Address start;
+            Address end;
+            getRouteAddres(tracker, out start, out end);
+            List<Marker> markers = convertJsonToMarkers(getRawData(start, end));
+            Route route = new Route(start, end, markers);
+            return route;
         }
     }
 }

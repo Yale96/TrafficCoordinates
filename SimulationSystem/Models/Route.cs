@@ -13,8 +13,8 @@ namespace SimulationSystem.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long id { get; set; }
-        public Address Start { get; set; }
-        public Address End { get; set; }
+        public virtual Address Start { get; set; }
+        public virtual Address End { get; set; }
         public virtual ICollection<Marker> Markers { get; set; }
         public Route()
         {

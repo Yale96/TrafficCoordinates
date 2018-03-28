@@ -12,7 +12,7 @@ namespace SimulationSystem.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long FollowUpId { get; set; }
+        public long Id { get; set; }
         public decimal Lat { get; set; }
         public decimal Lon { get; set; }
 
@@ -21,13 +21,16 @@ namespace SimulationSystem.Models
 
         }
 
-        public Marker(long followUpId, decimal lat, decimal lon)
+        public Marker(decimal lat, decimal lon)
         {
-            this.FollowUpId = followUpId;
             this.Lat = lat;
             this.Lon = lon;
         }
 
+        public override string ToString()
+        {
+            return this.Lat + "," + this.Lon + "|";
+        }
 
     }
 }
