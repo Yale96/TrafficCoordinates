@@ -199,6 +199,7 @@
     <Compile Include="Models\Tracker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GoogleMapsRepository.cs" />
+    <Compile Include="Repositories\GooglePoints.cs" />
     <Compile Include="ResponseModels\Bounds.cs" />
     <Compile Include="ResponseModels\Distance.cs" />
     <Compile Include="ResponseModels\Duration.cs" />

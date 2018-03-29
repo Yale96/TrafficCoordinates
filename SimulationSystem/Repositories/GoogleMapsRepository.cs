@@ -95,6 +95,7 @@ namespace SimulationSystem.Repositories
                 Address end;
                 getRouteAddres(tracker, out start, out end);
                 Route route = new Route(start, end, getPolyline(mapResponse(start, end)));
+                route.Markers = (ICollection<Marker>)GooglePoints.Decode(route.Polyline.points).ToList();
                 ctx.SaveChanges();
                 return route;
             }
