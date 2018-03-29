@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,10 +13,18 @@ namespace SimulationSystem.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long id { get; set; }
-        public virtual Address Start { get; set; }
-        public virtual Address End { get; set; }
+        public long ID { get; set; }
         public virtual ICollection<Marker> Markers { get; set; }
+        [ForeignKey("Tracker")]
+        public long Trackerid { get; set; }
+        [JsonIgnore]
+        public virtual Tracker Tracker { get; set; }
+        [ForeignKey("Start")]
+        public long StartID { get; set; }
+        public virtual Address Start { get; set; }
+        [ForeignKey("End")]
+        public long EndID { get; set; }
+        public virtual Address End { get; set; }
         public Route()
         {
 

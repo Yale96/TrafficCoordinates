@@ -20,21 +20,32 @@ namespace SimulationSystem.Repositories
             Client = new WebClient();
         }
 
-        public string getRawData(Address start, Address end)
+        public MapAPIResponse mapResponse(Address start, Address end)
         {
-            try
+            string s = start.ToString();
+            string e = end.ToString();
+            string url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + s + "&destination=" + e + "&key=AIzaSyALfpNH8dhaRgK3WvWnCx_pmA5hWPyOYJs";
+            return JsonConvert.DeserializeObject<MapAPIResponse>(Client.DownloadString(url));
+        }
+
+        public List<Marker> mapMarkers(MapAPIResponse response)
+        {
+            List<Marker> mapmarkers = new List<Marker>();
+            foreach (ResponseRoute r in response.routes)
             {
-                string s = start.ToString();
-                string e = end.ToString();
-                string url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + s + "&destination=" + e + "&key=AIzaSyALfpNH8dhaRgK3WvWnCx_pmA5hWPyOYJs";
-                string content = Client.DownloadString(url);
-                return content;
-            }
-            catch (Exception e)
-            {
+                foreach (Leg l in r.legs)
+                {
+                    mapmarkers.Add(new Marker((decimal)l.start_location.lat,(decimal)l.start_location.lng));
+                    foreach (Step s in l.steps)
+                    {
+                        mapmarkers.Add(new Marker((decimal)s.start_location.lat, (decimal)s.start_location.lng));
+                        mapmarkers.Add(new Marker((decimal)s.end_location.lat, (decimal)s.end_location.lng));
+                    }
+                    mapmarkers.Add(new Marker((decimal)l.end_location.lat, (decimal)l.end_location.lng));
+                }
                 
             }
-            return "";
+            return mapmarkers;
         }
 
         public RoadAPIResponse roadResponse(ICollection<Marker> markers)
@@ -49,49 +60,6 @@ namespace SimulationSystem.Repositories
 
             string url = "https://roads.googleapis.com/v1/nearestRoads?points="+ markerString + "&key=AIzaSyCIx_pQb19a4YJMg1mPq6xEW3Qy5MRnGEE";
             return JsonConvert.DeserializeObject<RoadAPIResponse>(Client.DownloadString(url));
-        }
-
-        public List<Marker> convertJsonToMarkers(string json)
-        {
-            List<Marker> markers = new List<Marker>();
-
-            string[] firstSplittedString = Regex.Split(json, "\"steps\" : ");
-            string[] secondSplittedString = Regex.Split(firstSplittedString[1], ",\n               \"traffic");
-            JArray JSONObjects = JArray.Parse(secondSplittedString[0]);
-            JEnumerable<JToken> tokens = JSONObjects.Children();
-            List<int> indexes = new List<int>();
-            indexes.Add(5);
-
-            for (int i = 0; i < tokens.Count(); i++)
-            {
-                if (i == (tokens.Count() - 1))
-                {
-                    indexes.Add(2);
-                }
-
-                foreach (int index in indexes)
-                {
-                    var JObject = tokens.ElementAt(i);
-                    JEnumerable<JToken> coordinates;
-                    if (index == 5 && JObject.Children().Count() == 8)
-                    {
-                        coordinates = JObject.Children().ElementAt(6).Children();
-                    }
-                    else
-                    {
-                        coordinates = JObject.Children().ElementAt(index).Children();
-                    }
-
-                    decimal lat;
-                    decimal lng;
-                    Decimal.TryParse(coordinates.Children().ElementAt(0).Children().ElementAt(0).ToString(), out lat);
-                    Decimal.TryParse(coordinates.Children().ElementAt(1).Children().ElementAt(0).ToString(), out lng);
-
-                    Marker m = new Marker(lat, lng);
-                    markers.Add(m);
-                }
-            }
-            return markers;
         }
 
         public void getRouteAddres(Tracker tracker, out Address start, out Address end)
@@ -134,14 +102,23 @@ namespace SimulationSystem.Repositories
             return dist;
         }
 
-        public Route generateRoute(Tracker tracker)
+        public Models.Route generateRoute(Tracker tracker)
         {
-            Address start;
-            Address end;
-            getRouteAddres(tracker, out start, out end);
-            List<Marker> markers = convertJsonToMarkers(getRawData(start, end));
-            Route route = new Route(start, end, markers);
-            return route;
+            using (var ctx = new SimulationContext())
+            {
+                Address start;
+                Address end;
+                getRouteAddres(tracker, out start, out end);
+                List<Marker> markers = mapMarkers(mapResponse(start, end));
+                List<Marker> roadMarkers = new List<Marker>();
+                foreach (SnappedPoint s in roadResponse(markers).snappedPoints)
+                {
+                    roadMarkers.Add(new Marker((decimal)s.location.latitude, (decimal)s.location.longitude));
+                    ctx.SaveChanges();
+                }
+                Route route = new Route(start, end, roadMarkers);
+                return route;
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace SimulationSystem.Models
 {
@@ -12,9 +13,13 @@ namespace SimulationSystem.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
+        public long ID { get; set; }
         public decimal Lat { get; set; }
         public decimal Lon { get; set; }
+        [ForeignKey("Route")]
+        public long Routeid { get; set; }
+        [JsonIgnore]
+        public virtual Route Route { get; set; }
 
         public Marker()
         {

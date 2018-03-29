@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace SimulationSystem.Models
 {
@@ -12,11 +13,12 @@ namespace SimulationSystem.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long id { get; set; }
+        public long AdressID { get; set; }
         public string Street { get; set; }
         public string Number { get; set; }
         public string Zip { get; set; }
         public string City { get; set; }
+
         public Address()
         {
 

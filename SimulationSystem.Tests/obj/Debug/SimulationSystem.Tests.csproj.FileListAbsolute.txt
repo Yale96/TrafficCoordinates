@@ -125,44 +125,5 @@ H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem.Tes
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.csproj.CopyComplete
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.dll
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.pdb
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\ApplicationInsights.config
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\SimulationSystem.Tests.dll.config
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\SimulationSystem.Tests.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\SimulationSystem.Tests.pdb
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\Newtonsoft.Json.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\SimulationSystem.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Net.Http.Formatting.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Helpers.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Http.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Http.WebHost.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Mvc.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Razor.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.Razor.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Optimization.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\SimulationSystem.pdb
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\Newtonsoft.Json.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Net.Http.Formatting.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Helpers.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Http.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Http.WebHost.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Mvc.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Razor.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.WebPages.Razor.xml
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\bin\Debug\System.Web.Optimization.xml
 D:\Github\TrafficCoordinates\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.csprojResolveAssemblyReference.cache
 D:\Github\TrafficCoordinates\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.csproj.CoreCompileInputs.cache
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.csproj.CopyComplete
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.dll
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.pdb

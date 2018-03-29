@@ -12,10 +12,10 @@ namespace SimulationSystem.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long trackerid { get; set; }
-        public decimal lat { get; set; }
-        public decimal lng { get; set; }
-        public long timestamp { get; set; }
+        public long ID { get; set; }
+        public decimal Lat { get; set; }
+        public decimal Lng { get; set; }
+        public long Timestamp { get; set; }
         public virtual ICollection<Route> Routes { get; set; }
 
         public Tracker()
@@ -25,16 +25,16 @@ namespace SimulationSystem.Models
 
         public Tracker(decimal lat, decimal lng, DateTime timestamp)
         {
-            this.lat = lat;
-            this.lng = lng;
-            this.timestamp = timestamp.Ticks;
+            this.Lat = lat;
+            this.Lng = lng;
+            this.Timestamp = timestamp.Ticks;
         }
 
         public Tracker(decimal lat, decimal lng, Int64 timestamp)
         {
-            this.lat = lat;
-            this.lng = lng;
-            this.timestamp = timestamp;
+            this.Lat = lat;
+            this.Lng = lng;
+            this.Timestamp = timestamp;
         }
     }
 }

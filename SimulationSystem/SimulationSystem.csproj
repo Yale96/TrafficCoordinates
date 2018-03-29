@@ -199,9 +199,23 @@
     <Compile Include="Models\Tracker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GoogleMapsRepository.cs" />
+    <Compile Include="ResponseModels\Bounds.cs" />
+    <Compile Include="ResponseModels\Distance.cs" />
+    <Compile Include="ResponseModels\Duration.cs" />
+    <Compile Include="ResponseModels\EndLocation.cs" />
+    <Compile Include="ResponseModels\GeocodedWaypoint.cs" />
+    <Compile Include="ResponseModels\Leg.cs" />
     <Compile Include="ResponseModels\Location.cs" />
+    <Compile Include="ResponseModels\MapAPIResponse.cs" />
+    <Compile Include="ResponseModels\Northeast.cs" />
+    <Compile Include="ResponseModels\OverviewPolyline.cs" />
+    <Compile Include="ResponseModels\Polyline.cs" />
     <Compile Include="ResponseModels\RoadAPIResponse.cs" />
+    <Compile Include="ResponseModels\ResponseRoute.cs" />
     <Compile Include="ResponseModels\SnappedPoint.cs" />
+    <Compile Include="ResponseModels\Southwest.cs" />
+    <Compile Include="ResponseModels\StartLocation.cs" />
+    <Compile Include="ResponseModels\Step.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

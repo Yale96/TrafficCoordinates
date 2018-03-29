@@ -98,11 +98,12 @@ H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\obj
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\obj\Debug\SimulationSystem.dll
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\obj\Debug\SimulationSystem.pdb
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\obj\Debug\SimulationSystem.csprojResolveAssemblyReference.cache
-D:\Github\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.csprojResolveAssemblyReference.cache
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\bin\System.Diagnostics.DiagnosticSource.dll
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\bin\System.Diagnostics.DiagnosticSource.xml
 D:\Github\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.csproj.ResolveComReference.cache
 D:\Github\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.csproj.CoreCompileInputs.cache
-D:\Github\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.dll
-D:\Github\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.pdb
 D:\Github\TrafficCoordinates\SimulationSystem\bin\ApplicationInsights.config
 D:\Github\TrafficCoordinates\SimulationSystem\bin\SimulationSystem.dll
 D:\Github\TrafficCoordinates\SimulationSystem\bin\SimulationSystem.pdb
@@ -153,7 +154,6 @@ D:\Github\TrafficCoordinates\SimulationSystem\bin\System.Web.WebPages.xml
 D:\Github\TrafficCoordinates\SimulationSystem\bin\System.Web.WebPages.Deployment.xml
 D:\Github\TrafficCoordinates\SimulationSystem\bin\System.Web.WebPages.Razor.xml
 D:\Github\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.csproj.CopyComplete
-H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\bin\Microsoft.AspNet.TelemetryCorrelation.dll
-H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\bin\System.Diagnostics.DiagnosticSource.dll
-H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\bin\Microsoft.AspNet.TelemetryCorrelation.xml
-H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Github\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.dll
+D:\Github\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.pdb
+D:\Github\TrafficCoordinates\SimulationSystem\obj\Debug\SimulationSystem.csprojResolveAssemblyReference.cache
