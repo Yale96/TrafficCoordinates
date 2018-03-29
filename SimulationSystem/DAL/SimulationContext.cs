@@ -23,8 +23,8 @@ namespace SimulationSystem.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SimulationContext>());
-            //Database.SetInitializer(new DropCreateDatabaseAlways<SimulationContext>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SimulationContext>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<SimulationContext>());
             base.OnModelCreating(modelBuilder);
         }
     }
