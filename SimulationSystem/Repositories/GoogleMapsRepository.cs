@@ -28,34 +28,19 @@ namespace SimulationSystem.Repositories
             return JsonConvert.DeserializeObject<MapAPIResponse>(Client.DownloadString(url));
         }
 
-        public List<Marker> mapMarkers(MapAPIResponse response)
+        public OverviewPolyline getPolyline(MapAPIResponse response)
         {
-            List<Marker> mapmarkers = new List<Marker>();
+            OverviewPolyline result = new OverviewPolyline();
             foreach (ResponseRoute r in response.routes)
             {
-                foreach (Leg l in r.legs)
-                {
-                    mapmarkers.Add(new Marker(l.start_location.lat,l.start_location.lng));
-                    foreach (Step s in l.steps)
-                    {
-                        mapmarkers.Add(new Marker(s.start_location.lat,s.start_location.lng));
-                        mapmarkers.Add(new Marker(s.end_location.lat,s.end_location.lng));
-                    }
-                    mapmarkers.Add(new Marker(l.end_location.lat, l.end_location.lng));
-                }
-                
+                result = r.overview_polyline;
             }
-            return mapmarkers;
+            return result;
         }
 
         public RoadAPIResponse roadResponse(Marker m1, Marker m2)
         {
             string markerString = m1+ "" + m2;
-
-            //foreach (Marker m in markers)
-            //{
-            //        markerString += m.ToString();
-            //}
             markerString = markerString.Remove(markerString.Length - 1);
 
             string url = "https://roads.googleapis.com/v1/nearestRoads?points="+ markerString + "&key=AIzaSyCIx_pQb19a4YJMg1mPq6xEW3Qy5MRnGEE";
@@ -109,17 +94,7 @@ namespace SimulationSystem.Repositories
                 Address start;
                 Address end;
                 getRouteAddres(tracker, out start, out end);
-                List<Marker> markers = mapMarkers(mapResponse(start, end));
-                List<Marker> roadMarkers = new List<Marker>();
-                for (int i = 0; i < markers.Count - 1; i++)
-                {
-                    foreach (SnappedPoint s in roadResponse(markers[i],markers[i+1]).snappedPoints)
-                    {
-                        roadMarkers.Add(new Marker(s.location.latitude, s.location.longitude));
-                    }
-                }
-
-                Route route = new Route(start, end, roadMarkers);
+                Route route = new Route(start, end, getPolyline(mapResponse(start, end)));
                 ctx.SaveChanges();
                 return route;
             }

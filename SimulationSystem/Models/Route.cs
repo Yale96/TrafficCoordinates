@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using SimulationSystem.ResponseModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -19,6 +20,7 @@ namespace SimulationSystem.Models
         public long Trackerid { get; set; }
         [JsonIgnore]
         public virtual Tracker Tracker { get; set; }
+        public OverviewPolyline Polyline { get; set; }
         [ForeignKey("Start")]
         public long StartID { get; set; }
         public virtual Address Start { get; set; }
@@ -30,11 +32,11 @@ namespace SimulationSystem.Models
 
         }
 
-        public Route(Address start, Address end, ICollection<Marker> markers)
+        public Route(Address start, Address end, OverviewPolyline pol)
         {
             this.Start = start;
             this.End = end;
-            this.Markers = markers;
+            this.Polyline = pol;
         }
 
     }
