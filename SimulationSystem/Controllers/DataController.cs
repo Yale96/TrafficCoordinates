@@ -53,7 +53,7 @@ namespace SimulationSystem.Controllers
         [HttpGet]
         public String getStatus()
         {
-            return "Online, stijve penis.";
+            return "Online";
         }
 
         [Route("gettracker")]
