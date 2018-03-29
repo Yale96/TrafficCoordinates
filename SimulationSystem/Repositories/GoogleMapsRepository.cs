@@ -111,12 +111,17 @@ namespace SimulationSystem.Repositories
                 getRouteAddres(tracker, out start, out end);
                 List<Marker> markers = mapMarkers(mapResponse(start, end));
                 List<Marker> roadMarkers = new List<Marker>();
+                List<Marker> moreMarkers = new List<Marker>();
                 foreach (SnappedPoint s in roadResponse(markers).snappedPoints)
                 {
                     roadMarkers.Add(new Marker(s.location.latitude, s.location.longitude));
-                    ctx.SaveChanges();
+                }
+                foreach (SnappedPoint s in roadResponse(roadMarkers).snappedPoints)
+                {
+                    moreMarkers.Add(new Marker(s.location.latitude, s.location.longitude));
                 }
                 Route route = new Route(start, end, roadMarkers);
+                ctx.SaveChanges();
                 return route;
             }
         }
