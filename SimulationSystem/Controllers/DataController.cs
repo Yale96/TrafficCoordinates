@@ -49,6 +49,13 @@ namespace SimulationSystem.Controllers
             }
         }
 
+        [Route("getstatus")]
+        [HttpGet]
+        public String getStatus()
+        {
+            return "Online, stijve penis.";
+        }
+
         [Route("gettracker")]
         [HttpGet]
         public Tracker Get()
