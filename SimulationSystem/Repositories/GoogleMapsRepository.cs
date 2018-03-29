@@ -35,13 +35,13 @@ namespace SimulationSystem.Repositories
             {
                 foreach (Leg l in r.legs)
                 {
-                    mapmarkers.Add(new Marker((decimal)l.start_location.lat,(decimal)l.start_location.lng));
+                    mapmarkers.Add(new Marker(l.start_location.lat,l.start_location.lng));
                     foreach (Step s in l.steps)
                     {
-                        mapmarkers.Add(new Marker((decimal)s.start_location.lat, (decimal)s.start_location.lng));
-                        mapmarkers.Add(new Marker((decimal)s.end_location.lat, (decimal)s.end_location.lng));
+                        mapmarkers.Add(new Marker(s.start_location.lat,s.start_location.lng));
+                        mapmarkers.Add(new Marker(s.end_location.lat,s.end_location.lng));
                     }
-                    mapmarkers.Add(new Marker((decimal)l.end_location.lat, (decimal)l.end_location.lng));
+                    mapmarkers.Add(new Marker(l.end_location.lat, l.end_location.lng));
                 }
                 
             }
@@ -113,7 +113,7 @@ namespace SimulationSystem.Repositories
                 List<Marker> roadMarkers = new List<Marker>();
                 foreach (SnappedPoint s in roadResponse(markers).snappedPoints)
                 {
-                    roadMarkers.Add(new Marker((decimal)s.location.latitude, (decimal)s.location.longitude));
+                    roadMarkers.Add(new Marker(s.location.latitude, s.location.longitude));
                     ctx.SaveChanges();
                 }
                 Route route = new Route(start, end, roadMarkers);

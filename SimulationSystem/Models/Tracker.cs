@@ -13,8 +13,8 @@ namespace SimulationSystem.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long ID { get; set; }
-        public decimal Lat { get; set; }
-        public decimal Lng { get; set; }
+        public double Lat { get; set; }
+        public double Lng { get; set; }
         public long Timestamp { get; set; }
         public virtual ICollection<Route> Routes { get; set; }
 
@@ -23,14 +23,14 @@ namespace SimulationSystem.Models
 
         }
 
-        public Tracker(decimal lat, decimal lng, DateTime timestamp)
+        public Tracker(double lat, double lng, DateTime timestamp)
         {
             this.Lat = lat;
             this.Lng = lng;
             this.Timestamp = timestamp.Ticks;
         }
 
-        public Tracker(decimal lat, decimal lng, Int64 timestamp)
+        public Tracker(double lat, double lng, Int64 timestamp)
         {
             this.Lat = lat;
             this.Lng = lng;

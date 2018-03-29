@@ -14,8 +14,8 @@ namespace SimulationSystem.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long ID { get; set; }
-        public decimal Lat { get; set; }
-        public decimal Lon { get; set; }
+        public double Lat { get; set; }
+        public double Lon { get; set; }
         [ForeignKey("Route")]
         public long Routeid { get; set; }
         [JsonIgnore]
@@ -26,7 +26,7 @@ namespace SimulationSystem.Models
 
         }
 
-        public Marker(decimal lat, decimal lon)
+        public Marker(double lat, double lon)
         {
             this.Lat = lat;
             this.Lon = lon;
@@ -34,7 +34,7 @@ namespace SimulationSystem.Models
 
         public override string ToString()
         {
-            return this.Lat + "," + this.Lon + "|";
+            return this.Lat.ToString() + "," + this.Lon.ToString() + "|";
         }
 
     }

@@ -125,5 +125,3 @@ H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem.Tes
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.csproj.CopyComplete
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.dll
 H:\School\S6\Periode 1\Proftaak\Code\Traffic Coordinates Pt\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.pdb
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.csprojResolveAssemblyReference.cache
-D:\Github\TrafficCoordinates\SimulationSystem.Tests\obj\Debug\SimulationSystem.Tests.csproj.CoreCompileInputs.cache
