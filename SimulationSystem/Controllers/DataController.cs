@@ -56,6 +56,15 @@ namespace SimulationSystem.Controllers
             return "Online";
         }
 
+        [Route("getdurations")]
+        [HttpGet]
+        public Dictionary<Duration, StartLocation> getDurations()
+        {
+            Address aOne = new Address("Kruiningenstraat", "15", "5045PS", "Tilburg");
+            Address aTwo = new Address("Churchillstraat", "33", "5103TG", "Dongen");
+            return mapRepo.getDurations(mapRepo.mapResponse(aOne, aTwo));
+        }
+
         [Route("gettracker")]
         [HttpGet]
         public Tracker Get()

@@ -34,8 +34,26 @@ namespace SimulationSystem.Repositories
             foreach (ResponseRoute r in response.routes)
             {
                 result = r.overview_polyline;
+                
             }
             return result;
+        }
+
+        public Dictionary<Duration, StartLocation> getDurations(MapAPIResponse mapAPIResponse)
+        {
+            Dictionary<Duration, StartLocation> durations = new Dictionary<Duration, StartLocation>();
+            
+            foreach (ResponseRoute r in mapAPIResponse.routes)
+            {
+                foreach (Leg l in r.legs)
+                {
+                    foreach(Step s in l.steps)
+                    {
+                        durations.Add(s.duration, s.start_location);
+                    }
+                }   
+            }
+            return durations;
         }
 
         public RoadAPIResponse roadResponse(Marker m1, Marker m2)
